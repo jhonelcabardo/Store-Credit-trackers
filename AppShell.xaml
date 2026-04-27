@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Store_Credit_Tracker.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Store_Credit_Tracker.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <!-- Style for tabs -->
+            <Style TargetType="Tab">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#1a1a2e" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#ffffff" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#888888" />
+            </Style>
+
+            <!-- Style for ShellContent -->
+            <Style TargetType="ShellContent">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#1a1a2e" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#ffffff" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Header Section with Logo -->
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#1a1a2e" Padding="0,30,0,15">
+            <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                <!-- App Logo -->
+                <Image Source="app_logo.png" 
+                       WidthRequest="80" 
+                       HeightRequest="80"
+                       HorizontalOptions="Center"/>
+
+                <!-- App Name -->
+                <Label Text="Store Credit Tracker" 
+                       FontSize="18" 
+                       FontAttributes="Bold"
+                       TextColor="#ffffff"
+                       HorizontalOptions="Center"/>
+
+                <!-- Decorative Line -->
+                <BoxView Color="#4a90e2" 
+                         HeightRequest="2" 
+                         WidthRequest="80"
+                         HorizontalOptions="Center"
+                         Margin="0,5,0,0"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Main Tab Bar -->
+    <TabBar>
+        <Tab Title="Home" Icon="Home.jpg">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+        </Tab>
+
+        <Tab Title="Customers" Icon="customers.jpg">
+            <ShellContent ContentTemplate="{DataTemplate local:CustomerPage}" />
+        </Tab>
+
+        <Tab Title="Reminders" Icon="reminder.png">
+            <ShellContent ContentTemplate="{DataTemplate local:RemindersPage}" />
+        </Tab>
+
+        <Tab Title="Settings" Icon="settings.png">
+            <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
+        </Tab>
+    </TabBar>
+
+    <!-- Footer Section with Image at Bottom -->
+    <Shell.FlyoutFooter>
+        <Grid BackgroundColor="#1a1a2e" Padding="0,20,0,30">
+            <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                <!-- Separator Line -->
+                <BoxView Color="#333344" 
+                         HeightRequest="1" 
+                         WidthRequest="150"
+                         HorizontalOptions="Center"/>
+
+                <!-- Your Image at the bottom of navbar name area -->
+                <Image Source="bottom_image.png" 
+                       WidthRequest="100" 
+                       HeightRequest="50"
+                       HorizontalOptions="Center"
+                       Aspect="AspectFit"/>
+
+                <!-- Optional small text -->
+                <Label Text="Store Credit Tracker" 
+                       FontSize="10" 
+                       TextColor="#666666"
+                       HorizontalOptions="Center"
+                       Opacity="0.6"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

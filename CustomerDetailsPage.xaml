@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.CustomerDetailsPage"
+    Title="Customer Details"
+    BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Frame BackgroundColor="#2563EB"
+                   CornerRadius="20"
+                   Padding="18">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Customer Details"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                    <Label Text="View customer information and actions"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Customer Name"
+                           FontAttributes="Bold"
+                           TextColor="#374151" />
+                    <Label x:Name="lblCustomerName"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#111827" />
+
+                    <Label Text="Phone Number"
+                           FontAttributes="Bold"
+                           TextColor="#374151" />
+                    <Label x:Name="lblPhone"
+                           FontSize="16"
+                           TextColor="#111827" />
+
+                    <Label Text="Customer Code"
+                           FontAttributes="Bold"
+                           TextColor="#374151" />
+                    <Label x:Name="lblCode"
+                           FontSize="16"
+                           TextColor="#111827" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Actions"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#1F2937" />
+
+            <VerticalStackLayout Spacing="12">
+
+                <Button Text="Add Credit / Utang"
+                        Clicked="OnAddCreditClicked"
+                        BackgroundColor="#2563EB"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="50"
+                        FontAttributes="Bold" />
+
+                <Button Text="Record Payment"
+                        Clicked="OnRecordPaymentClicked"
+                        BackgroundColor="#16A34A"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="50"
+                        FontAttributes="Bold" />
+
+                <Button Text="View Statement"
+                        Clicked="OnViewStatementClicked"
+                        BackgroundColor="#7C3AED"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="50"
+                        FontAttributes="Bold" />
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

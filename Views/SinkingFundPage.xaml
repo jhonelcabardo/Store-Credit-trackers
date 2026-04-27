@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.SinkingFundPage"
+    Title="Sinking Fund"
+    BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Frame BackgroundColor="#2E9E5B"
+                   CornerRadius="20"
+                   Padding="18">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Sinking Fund"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                    <Label Text="₱100 per head every Saturday"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Member Name" FontAttributes="Bold" />
+                    <Entry x:Name="MemberNameEntry"
+                           Placeholder="Enter member name" />
+
+                    <Label Text="Amount Per Head" FontAttributes="Bold" />
+                    <Entry x:Name="AmountEntry"
+                           Text="100"
+                           Keyboard="Numeric" />
+
+                    <Label Text="Payment Date" FontAttributes="Bold" />
+                    <DatePicker x:Name="PaymentDatePicker" />
+
+                    <Label Text="Status" FontAttributes="Bold" />
+                    <Picker x:Name="StatusPicker" Title="Select status">
+                        <Picker.Items>
+                            <x:String>Paid</x:String>
+                            <x:String>Unpaid</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Button Text="Add Record"
+                            Clicked="OnAddRecordClicked"
+                            BackgroundColor="#2E9E5B"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="48" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="16">
+                <VerticalStackLayout Spacing="10">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Sinking Fund Members"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#1F2937"
+                               VerticalOptions="Center" />
+
+                        <Button Grid.Column="1"
+                                x:Name="ToggleSinkingListButton"
+                                Text="Show"
+                                Clicked="OnToggleSinkingListClicked"
+                                BackgroundColor="#E5E7EB"
+                                TextColor="#111827"
+                                CornerRadius="10"
+                                HeightRequest="36"
+                                WidthRequest="90" />
+                    </Grid>
+
+                    <CollectionView x:Name="SinkingFundCollectionView"
+                                    IsVisible="False">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BackgroundColor="#F9FAFB"
+                                       CornerRadius="16"
+                                       Padding="14"
+                                       Margin="0,0,0,10">
+                                    <VerticalStackLayout Spacing="4">
+                                        <Label Text="{Binding MemberName}"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               TextColor="#1F2937" />
+                                        <Label Text="{Binding Amount, StringFormat='Amount: ₱{0:N2}'}" />
+                                        <Label Text="{Binding PaymentDate, StringFormat='Payment Date: {0:MMMM dd, yyyy}'}" />
+                                        <Label Text="{Binding Status, StringFormat='Status: {0}'}" />
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

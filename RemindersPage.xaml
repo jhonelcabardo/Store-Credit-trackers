@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Credit_Tracker.Views.RemindersPage"
+             Title="Reminders">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Overdue Alerts" FontSize="20" FontAttributes="Bold" Padding="10" BackgroundColor="#FFE66D"/>
+
+        <CollectionView x:Name="OverdueCustomersView" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeThickness="1" Stroke="#FF6B6B" Padding="10" Margin="10,5" StrokeShape="RoundRectangle 10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontSize="16" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding TotalDebt, StringFormat='Due: ₱{0:N2}'}" 
+                                   TextColor="Red"
+                                   FontAttributes="Bold"/>
+                            <Label Grid.Row="0" Grid.Column="1" 
+                                   Text="⚠️ OVERDUE 🔴" 
+                                   TextColor="Red"
+                                   HorizontalOptions="End"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

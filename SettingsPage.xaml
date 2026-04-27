@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.SettingsPage"
+    Title="Settings"
+    BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <!-- Header -->
+            <Frame BackgroundColor="#6B8796"
+                   CornerRadius="20"
+                   Padding="18">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Settings"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                    <Label Text="Manage your app settings"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Account Info -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Account"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#1F2937" />
+
+                    <Label Text="Logged In User"
+                           FontAttributes="Bold"
+                           TextColor="#4B5563" />
+                    <Label x:Name="LoggedInUserLabel"
+                           Text="Admin"
+                           FontSize="16"
+                           TextColor="#111827" />
+
+                    <Label Text="App Version"
+                           FontAttributes="Bold"
+                           TextColor="#4B5563" />
+                    <Label Text="Store Credit Tracker v1.0"
+                           FontSize="16"
+                           TextColor="#111827" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Preferences -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="16">
+
+                    <Label Text="Preferences"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#1F2937" />
+
+                    <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" RowSpacing="16">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Dark Mode"
+                               VerticalOptions="Center"
+                               FontSize="16"
+                               TextColor="#111827" />
+                        <Switch Grid.Row="0" Grid.Column="1"
+                                x:Name="DarkModeSwitch"
+                                Toggled="OnDarkModeToggled" />
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Notifications"
+                               VerticalOptions="Center"
+                               FontSize="16"
+                               TextColor="#111827" />
+                        <Switch Grid.Row="1" Grid.Column="1"
+                                x:Name="NotificationSwitch"
+                                IsToggled="True"
+                                Toggled="OnNotificationToggled" />
+
+                        <Label Grid.Row="2" Grid.Column="0"
+                               Text="Auto Backup"
+                               VerticalOptions="Center"
+                               FontSize="16"
+                               TextColor="#111827" />
+                        <Switch Grid.Row="2" Grid.Column="1"
+                                x:Name="BackupSwitch"
+                                Toggled="OnBackupToggled" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- More Options -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="More Options"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#1F2937" />
+
+                    <Button Text="Change Password"
+                            Clicked="OnChangePasswordClicked"
+                            BackgroundColor="#6B8796"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="48" />
+
+                    <Button Text="About App"
+                            Clicked="OnAboutClicked"
+                            BackgroundColor="#6B8796"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="48" />
+
+                    <Button Text="Help &amp; Support"
+        Clicked="OnHelpClicked"
+        BackgroundColor="#6B8796"
+        TextColor="White"
+        CornerRadius="12"
+        HeightRequest="48" />
+
+                    <Button Text="Logout"
+                            Clicked="OnLogoutClicked"
+                            BackgroundColor="#D9534F"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="48" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

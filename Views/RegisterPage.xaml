@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Credit_Tracker.Views.RegisterPage"
+             BackgroundColor="#1a1a2e"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <Grid Padding="20" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <VerticalStackLayout Grid.Row="0"
+                                 Spacing="10"
+                                 Margin="0,30,0,30"
+                                 HorizontalOptions="Center">
+
+                <Image Source="app_logo.png"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Create Account"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="#ffffff"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Sign up to get started"
+                       FontSize="14"
+                       TextColor="#888888"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Spacing="5" Margin="0,10,0,0">
+                <Label Text="Username" TextColor="#ffffff" FontSize="14"/>
+                <Entry x:Name="UsernameEntry"
+                       Placeholder="Choose a username"
+                       PlaceholderColor="#666666"
+                       BackgroundColor="#2a2a3e"
+                       TextColor="#ffffff"
+                       FontSize="16"
+                       HeightRequest="50"
+                       Margin="0,5,0,0"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="2" Spacing="5" Margin="0,15,0,0">
+                <Label Text="Email" TextColor="#ffffff" FontSize="14"/>
+                <Entry x:Name="EmailEntry"
+                       Placeholder="Enter your email"
+                       PlaceholderColor="#666666"
+                       BackgroundColor="#2a2a3e"
+                       TextColor="#ffffff"
+                       FontSize="16"
+                       HeightRequest="50"
+                       Margin="0,5,0,0"
+                       Keyboard="Email"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="3" Spacing="5" Margin="0,15,0,0">
+                <Label Text="Password" TextColor="#ffffff" FontSize="14"/>
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Choose a password"
+                       PlaceholderColor="#666666"
+                       BackgroundColor="#2a2a3e"
+                       TextColor="#ffffff"
+                       FontSize="16"
+                       HeightRequest="50"
+                       Margin="0,5,0,0"
+                       IsPassword="True"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="4" Spacing="5" Margin="0,15,0,0">
+                <Label Text="Confirm Password" TextColor="#ffffff" FontSize="14"/>
+                <Entry x:Name="ConfirmPasswordEntry"
+                       Placeholder="Confirm your password"
+                       PlaceholderColor="#666666"
+                       BackgroundColor="#2a2a3e"
+                       TextColor="#ffffff"
+                       FontSize="16"
+                       HeightRequest="50"
+                       Margin="0,5,0,0"
+                       IsPassword="True"/>
+            </VerticalStackLayout>
+
+            <Label x:Name="ErrorLabel"
+                   Grid.Row="5"
+                   Text=""
+                   TextColor="#ff4444"
+                   FontSize="12"
+                   Margin="0,10,0,0"
+                   IsVisible="False"/>
+
+            <Button Grid.Row="6"
+                    Text="REGISTER"
+                    BackgroundColor="#4a90e2"
+                    TextColor="#ffffff"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Margin="0,30,0,0"
+                    Clicked="OnRegisterClicked"/>
+
+            <Button Grid.Row="7"
+                    Text="BACK TO LOGIN"
+                    BackgroundColor="Transparent"
+                    TextColor="#4a90e2"
+                    FontSize="14"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    Margin="0,10,0,0"
+                    Clicked="OnBackToLoginClicked"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

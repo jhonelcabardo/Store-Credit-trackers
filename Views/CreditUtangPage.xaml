@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.CreditUtangPage"
+    Title="Credit / Utang"
+    BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Frame BackgroundColor="#2F6FDB"
+                   CornerRadius="20"
+                   Padding="18">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Credit / Utang"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                    <Label Text="Customer debt records"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Customer" FontAttributes="Bold" />
+                    <Picker x:Name="CustomerPicker"
+                            Title="Select customer" />
+
+                    <Label Text="Amount" FontAttributes="Bold" />
+                    <Entry x:Name="AmountEntry"
+                           Placeholder="Enter amount"
+                           Keyboard="Numeric" />
+
+                    <Label Text="Due Date" FontAttributes="Bold" />
+                    <DatePicker x:Name="DueDatePicker" />
+
+                    <Label Text="Description" FontAttributes="Bold" />
+                    <Editor x:Name="DescriptionEditor"
+                            Placeholder="Enter debt details"
+                            AutoSize="TextChanges"
+                            HeightRequest="100" />
+
+                    <Button Text="Save Utang"
+                            Clicked="OnSaveUtangClicked"
+                            BackgroundColor="#2F6FDB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="48" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

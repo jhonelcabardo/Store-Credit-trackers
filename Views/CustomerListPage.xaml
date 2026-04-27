@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Credit_Tracker.Views.CustomerListPage"
+             Title="Customers">
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+        <SearchBar Placeholder="Search name, phone, or code"
+                   Text="{Binding SearchText}" />
+
+        <HorizontalStackLayout Spacing="10">
+            <CheckBox IsChecked="{Binding OnlyWithBalance}" />
+            <Label Text="Only with balance" VerticalOptions="Center" />
+            <CheckBox IsChecked="{Binding OverdueOnly}" Margin="20,0,0,0" />
+            <Label Text="Overdue only" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <Button Text="Apply Filters" Clicked="OnApplyFiltersClicked" />
+
+        <CollectionView ItemsSource="{Binding Customers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="12" Padding="12" Margin="0,4">
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="{Binding FullName}" FontAttributes="Bold" FontSize="18" />
+                            <Label Text="{Binding CustomerCode}" FontSize="12" />
+                            <Label Text="{Binding PhoneNumber}" FontSize="12" />
+                            <Label Text="{Binding Balance, StringFormat='Balance: ₱{0:N2}'}" />
+                            <Label Text="{Binding Status}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

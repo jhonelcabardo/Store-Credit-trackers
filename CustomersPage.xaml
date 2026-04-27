@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.CustomerPage"
+    Title="Customer"
+    BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Frame BackgroundColor="#6C63FF"
+                   CornerRadius="20"
+                   Padding="18">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Customer"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                    <Label Text="Manage customer information"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Customer Name" FontAttributes="Bold" />
+                    <Entry x:Name="CustomerNameEntry"
+                           Placeholder="Enter customer name" />
+
+                    <Label Text="Contact Number" FontAttributes="Bold" />
+                    <Entry x:Name="ContactEntry"
+                           Placeholder="Enter contact number"
+                           Keyboard="Telephone" />
+
+                    <Label Text="Address" FontAttributes="Bold" />
+                    <Editor x:Name="AddressEditor"
+                            Placeholder="Enter address"
+                            AutoSize="TextChanges"
+                            HeightRequest="90" />
+
+                    <Button Text="Add Customer"
+                            Clicked="OnAddCustomerClicked"
+                            BackgroundColor="#6C63FF"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="48" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="16">
+                <VerticalStackLayout Spacing="10">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Customer List"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#1F2937"
+                               VerticalOptions="Center" />
+
+                        <Button Grid.Column="1"
+                                x:Name="ToggleCustomerListButton"
+                                Text="Show"
+                                Clicked="OnToggleCustomerListClicked"
+                                BackgroundColor="#E5E7EB"
+                                TextColor="#111827"
+                                CornerRadius="10"
+                                HeightRequest="36"
+                                WidthRequest="90" />
+                    </Grid>
+
+                    <CollectionView x:Name="CustomerCollectionView"
+                                    IsVisible="False">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BackgroundColor="#F9FAFB"
+                                       CornerRadius="16"
+                                       Padding="14"
+                                       Margin="0,0,0,10">
+                                    <VerticalStackLayout Spacing="4">
+                                        <Label Text="{Binding FullName}"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               TextColor="#1F2937" />
+                                        <Label Text="{Binding PhoneNumber, StringFormat='Contact: {0}'}" />
+                                        <Label Text="{Binding CustomerCode, StringFormat='Code: {0}'}" />
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

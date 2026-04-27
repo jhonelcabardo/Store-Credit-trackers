@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.Add"
+    Title="Add Customer">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+            <Label Text="Full Name" />
+            <Entry x:Name="txtFullName" Placeholder="Customer name" />
+
+            <Label Text="Phone Number" />
+            <Entry x:Name="txtPhone" Placeholder="Phone number" />
+
+            <Button Text="Save" Clicked="OnSaveClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

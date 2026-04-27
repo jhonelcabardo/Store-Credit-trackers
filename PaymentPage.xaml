@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.PaymentsPage"
+    Title="Payments"
+    BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Frame BackgroundColor="#16A34A"
+                   CornerRadius="20"
+                   Padding="18">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Record Payment"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                    <Label Text="Customer payment entry"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   Padding="18">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Customer" FontAttributes="Bold" />
+                    <Picker x:Name="CustomerPicker"
+                            Title="Select customer" />
+
+                    <Label Text="Payment Amount" FontAttributes="Bold" />
+                    <Entry x:Name="AmountEntry"
+                           Placeholder="Enter payment amount"
+                           Keyboard="Numeric" />
+
+                    <Label Text="Notes" FontAttributes="Bold" />
+                    <Editor x:Name="NotesEditor"
+                            Placeholder="Enter notes"
+                            AutoSize="TextChanges"
+                            HeightRequest="100" />
+
+                    <Button Text="Save Payment"
+                            Clicked="OnPayClicked"
+                            BackgroundColor="#16A34A"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="48" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

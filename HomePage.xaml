@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.HomePage"
+    Title=""
+    BackgroundColor="#F5F7FA">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <!-- Dashboard Content -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="18">
+
+                <Frame BackgroundColor="#2E8B57"
+                       CornerRadius="22"
+                       Padding="20"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text=""
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center" />
+
+                        <Label Text="Store Credit and Barangay Collection"
+                               FontSize="14"
+                               TextColor="White"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="12">
+
+                    <Frame Grid.Row="0" Grid.Column="0"
+                           BackgroundColor="#EAF2FF"
+                           CornerRadius="18"
+                           Padding="16"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="Total Customers"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#244C8F" />
+                            <Label x:Name="TotalCustomersLabel"
+                                   Text="0"
+                                   FontSize="34"
+                                   FontAttributes="Bold"
+                                   TextColor="#244C8F" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="0" Grid.Column="1"
+                           BackgroundColor="#FFEDED"
+                           CornerRadius="18"
+                           Padding="16"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="Total Utang"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#A33A3A" />
+                            <Label x:Name="TotalUtangLabel"
+                                   Text="₱0.00"
+                                   FontSize="30"
+                                   FontAttributes="Bold"
+                                   TextColor="#A33A3A" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="1" Grid.Column="0"
+                           BackgroundColor="#EAF8EF"
+                           CornerRadius="18"
+                           Padding="16"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="Sinking Fund Members"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#1D6B43" />
+                            <Label x:Name="TotalMembersLabel"
+                                   Text="0"
+                                   FontSize="34"
+                                   FontAttributes="Bold"
+                                   TextColor="#1D6B43" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="1" Grid.Column="1"
+                           BackgroundColor="#FFF7E8"
+                           CornerRadius="18"
+                           Padding="16"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="This Saturday Collection"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#B06A16" />
+                            <Label x:Name="SaturdayCollectionLabel"
+                                   Text="₱0.00"
+                                   FontSize="30"
+                                   FontAttributes="Bold"
+                                   TextColor="#B06A16" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </Grid>
+
+                <Label Text="Main Modules"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#1F2937"
+                       Margin="0,8,0,0" />
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                    <Frame Grid.Column="0"
+                           BackgroundColor="#2F6FDB"
+                           CornerRadius="20"
+                           Padding="8"
+                           HasShadow="True"
+                           HeightRequest="110">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="2">
+                            <Label Text="📒"
+                                   FontSize="22"
+                                   HorizontalOptions="Center" />
+
+                            <Label Text="Credit / Utang"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label Text="Customer debts"
+                                   FontSize="9"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Button Text="Open"
+                                    Clicked="OnCreditUtangClicked"
+                                    BackgroundColor="White"
+                                    TextColor="#2F6FDB"
+                                    CornerRadius="10"
+                                    HeightRequest="28"
+                                    Padding="4,1"
+                                    FontSize="12"
+                                    FontAttributes="Bold" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Grid.Column="1"
+                           BackgroundColor="#2E9E5B"
+                           CornerRadius="20"
+                           Padding="8"
+                           HasShadow="True"
+                           HeightRequest="110">
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="2">
+                            <Label Text="🏠"
+                                   FontSize="22"
+                                   HorizontalOptions="Center" />
+
+                            <Label Text="Sinking Fund"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label Text="Weekly collection"
+                                   FontSize="9"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Button Text="Open"
+                                    Clicked="OnSinkingFundClicked"
+                                    BackgroundColor="White"
+                                    TextColor="#2E9E5B"
+                                    CornerRadius="10"
+                                    HeightRequest="28"
+                                    Padding="4,1"
+                                    FontSize="12"
+                                    FontAttributes="Bold" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </Grid>
+
+                <BoxView HeightRequest="12" Color="Transparent" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navbar -->
+        <Grid Grid.Row="1"
+              BackgroundColor="White"
+              Padding="10"
+              ColumnDefinitions="*,*,*,*">
+
+            <VerticalStackLayout Grid.Column="0" Spacing="4" HorizontalOptions="Center">
+                <Button Text="🏠"
+                        Clicked="OnHomeClicked"
+                        BackgroundColor="Transparent"
+                        FontSize="22"
+                        TextColor="#2E8B57" />
+                <Label Text="Home"
+                       FontSize="12"
+                       HorizontalOptions="Center"
+                       TextColor="#2E8B57" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center">
+                <Button Text="👥"
+                        Clicked="OnCustomerClicked"
+                        BackgroundColor="Transparent"
+                        FontSize="22"
+                        TextColor="#6C63FF" />
+                <Label Text="Customer"
+                       FontSize="12"
+                       HorizontalOptions="Center"
+                       TextColor="#6C63FF" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="2" Spacing="4" HorizontalOptions="Center">
+                <Button Text="💰"
+                        Clicked="OnSinkingFundClicked"
+                        BackgroundColor="Transparent"
+                        FontSize="22"
+                        TextColor="#2E9E5B" />
+                <Label Text="Sinking Fund"
+                       FontSize="12"
+                       HorizontalOptions="Center"
+                       TextColor="#2E9E5B" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="3" Spacing="4" HorizontalOptions="Center">
+                <Button Text="⚙️"
+                        Clicked="OnSettingsClicked"
+                        BackgroundColor="Transparent"
+                        FontSize="22"
+                        TextColor="#607D8B" />
+                <Label Text="Settings"
+                       FontSize="12"
+                       HorizontalOptions="Center"
+                       TextColor="#607D8B" />
+            </VerticalStackLayout>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>

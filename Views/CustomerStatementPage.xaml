@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Store_Credit_Tracker.Views.CustomerStatementPage"
+    Title="Customer Statement">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label x:Name="lblTitle" Text="Customer Statement" FontSize="22" FontAttributes="Bold" />
+
+            <CollectionView x:Name="statementList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border StrokeThickness="1" Padding="10" Margin="0,4">
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="{Binding TypeLabel}" FontAttributes="Bold" />
+                                <Label Text="{Binding ReferenceNumber}" FontSize="12" />
+                                <Label Text="{Binding TransactionDate, StringFormat='Date: {0:MMM dd, yyyy}'}" />
+                                <Label Text="{Binding DueDate, StringFormat='Due: {0:MMM dd, yyyy}'}" />
+                                <Label Text="{Binding Debit, StringFormat='Debit: ₱{0:N2}'}" />
+                                <Label Text="{Binding Credit, StringFormat='Credit: ₱{0:N2}'}" />
+                                <Label Text="{Binding RunningBalance, StringFormat='Balance: ₱{0:N2}'}" />
+                                <Label Text="{Binding Notes}" FontSize="12" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Credit_Tracker.Views.DashboardPage"
+             Title="Dashboard">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Frame CornerRadius="14" Padding="16">
+                <VerticalStackLayout>
+                    <Label Text="Total Outstanding" FontAttributes="Bold" FontSize="16" />
+                    <Label Text="{Binding Summary.TotalOutstanding, StringFormat='₱{0:N2}'}" FontSize="28" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame CornerRadius="14" Padding="16">
+                <VerticalStackLayout>
+                    <Label Text="Collected Today" FontAttributes="Bold" FontSize="16" />
+                    <Label Text="{Binding Summary.TotalCollectedToday, StringFormat='₱{0:N2}'}" FontSize="28" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="12">
+                <Frame Grid.Row="0" Grid.Column="0" CornerRadius="14" Padding="16">
+                    <VerticalStackLayout>
+                        <Label Text="Customers with Balance" FontAttributes="Bold" />
+                        <Label Text="{Binding Summary.CustomersWithBalance}" FontSize="24" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.Column="1" CornerRadius="14" Padding="16">
+                    <VerticalStackLayout>
+                        <Label Text="Overdue Accounts" FontAttributes="Bold" />
+                        <Label Text="{Binding Summary.OverdueAccounts}" FontSize="24" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.ColumnSpan="2" CornerRadius="14" Padding="16">
+                    <VerticalStackLayout>
+                        <Label Text="Due Today" FontAttributes="Bold" />
+                        <Label Text="{Binding Summary.DueTodayCount}" FontSize="24" />
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
